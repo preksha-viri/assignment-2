@@ -6,7 +6,7 @@ def job_sequencing(jobs):
     """
     jobs: list of tuples (id, deadline, profit)
     """
-    # Sort jobs by profit descending
+    
     jobs.sort(key=lambda x: x[2], reverse=True)
     max_deadline = max(job[1] for job in jobs)
     slots = [None] * (max_deadline + 1)
@@ -38,7 +38,7 @@ def run_job_sequencing():
     print("Total Profit:", total_profit)
     print("Execution Time:", round(end - start, 6), "sec")
 
-    # Visualization
+   
     if result:
         plt.bar([j[0] for j in result], [j[2] for j in result])
         plt.title("TV Commercials: Ads vs Revenue")
@@ -48,3 +48,4 @@ def run_job_sequencing():
 
 if __name__ == "__main__":
     run_job_sequencing()
+
